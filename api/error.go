@@ -19,7 +19,7 @@ const (
 	//
 	//     https://play.golang.org/p/L6f4ItJLufv
 	//
-	guestEOFPattern = `Get https://api\..*/api/v1/nodes: EOF`
+	guestEOFPattern = `Get https://api\..*/api/v1/nodes: (unexpected )?EOF`
 
 	// guestTransientInvalidCertificatePattern regular expression defines the kind
 	// of transient errors related to certificates returned while the guest API is
