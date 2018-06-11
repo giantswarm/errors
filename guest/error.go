@@ -36,9 +36,9 @@ var (
 	transientInvalidCertificateRegexp = regexp.MustCompile(transientInvalidCertificatePattern)
 )
 
-// apiNotAvailableError is returned when the guest Kubernetes API is not
+// APINotAvailableError is returned when the guest Kubernetes API is not
 // available.
-var apiNotAvailableError = microerror.New("API not available")
+var APINotAvailableError = microerror.New("API not available")
 
 // IsAPINotAvailable asserts APINotAvailableError.
 func IsAPINotAvailable(err error) bool {
@@ -61,7 +61,7 @@ func IsAPINotAvailable(err error) bool {
 		}
 	}
 
-	if c == apiNotAvailableError {
+	if c == APINotAvailableError {
 		return true
 	}
 
