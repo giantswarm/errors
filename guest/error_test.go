@@ -1,4 +1,4 @@
-package api
+package guest
 
 import (
 	"errors"
@@ -51,7 +51,7 @@ func Test_IsGuestAPINotAvailable(t *testing.T) {
 	for _, tc := range testCases {
 		t.Run(tc.description, func(t *testing.T) {
 			err := errors.New(tc.errorMessage)
-			result := IsGuestAPINotAvailable(err)
+			result := IsAPINotAvailable(err)
 
 			if result != tc.expectedMatch {
 				t.Fatalf("expected %t, got %t", tc.expectedMatch, result)
