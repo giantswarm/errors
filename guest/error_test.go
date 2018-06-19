@@ -37,12 +37,17 @@ func Test_IsGuestAPINotAvailable(t *testing.T) {
 			expectedMatch: true,
 		},
 		{
-			description:   "case 6: ingress not ready post request",
+			description:   "case 6: temporary issues with the master node serving the guest cluster API",
+			errorMessage:  "Get https://api.uth29.g8s.geckon.gridscale.kvm.gigantic.io/api/v1/nodes?timeout=30s: EOF",
+			expectedMatch: true,
+		},
+		{
+			description:   "case 7: ingress not ready post request",
 			errorMessage:  "Post https://api.5xchu.aws.gigantic.io: x509: certificate is valid for ingress.local, not api.5xchu.aws.gigantic.io:",
 			expectedMatch: true,
 		},
 		{
-			description:   "case 7: ingress not ready post different domain",
+			description:   "case 8: ingress not ready post different domain",
 			errorMessage:  "Post https://api.5xchu.aws.gigantic.io: x509: certificate is valid for localhost, not api.5xchu.aws.gigantic.io:",
 			expectedMatch: false,
 		},
