@@ -29,6 +29,11 @@
   branch = "master"
   name = "github.com/giantswarm/microerror"
 
+[[constraint]]
+  name = "k8s.io/apimachinery"
+  version = "kubernetes-1.10.4"
+
+
 [prune]
   go-tests = true
   unused-packages = true
