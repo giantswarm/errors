@@ -51,6 +51,16 @@ func Test_IsGuestAPINotAvailable(t *testing.T) {
 			errorMessage:  "Post https://api.5xchu.aws.gigantic.io: x509: certificate is valid for localhost, not api.5xchu.aws.gigantic.io:",
 			expectedMatch: false,
 		},
+		{
+			description:   "case 9: timeout getting namespace",
+			errorMessage:  "Get https://api.3jwh2.k8s.aws.gigantic.io/api/v1/namespaces/giantswarm?timeout=30s: EOF",
+			expectedMatch: true,
+		},
+		{
+			description:   "case 10: timeout getting service account",
+			errorMessage:  "Post https://api.3jwh2.k8s.aws.gigantic.io/api/v1/namespaces/giantswarm/serviceaccounts?timeout=30s: EOF",
+			expectedMatch: true,
+		},
 	}
 
 	for _, tc := range testCases {
