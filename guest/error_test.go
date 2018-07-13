@@ -61,6 +61,11 @@ func Test_IsGuestAPINotAvailable(t *testing.T) {
 			errorMessage:  "Post https://api.3jwh2.k8s.aws.gigantic.io/api/v1/namespaces/giantswarm/serviceaccounts?timeout=30s: EOF",
 			expectedMatch: true,
 		},
+		{
+			description:   "case 11: timeout establishing TLS handshake",
+			errorMessage:  "Get https://api.08vka.k8s.gorgoth.gridscale.kvm.gigantic.io/api/v1/nodes?timeout=30s: net/http: TLS handshake timeout",
+			expectedMatch: true,
+		},
 	}
 
 	for _, tc := range testCases {
