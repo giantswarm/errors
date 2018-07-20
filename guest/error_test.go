@@ -66,6 +66,11 @@ func Test_IsGuestAPINotAvailable(t *testing.T) {
 			errorMessage:  "Get https://api.08vka.k8s.gorgoth.gridscale.kvm.gigantic.io/api/v1/nodes?timeout=30s: net/http: TLS handshake timeout",
 			expectedMatch: true,
 		},
+		{
+			description:   "case 12: server is misbehaving due to TCP lookup",
+			errorMessage:  "Get https://api.ci-wip-70f9b-5e958.k8s.godsmack.westeurope.azure.gigantic.io/api/v1/nodes?timeout=30s: dial tcp: lookup api.ci-wip-70f9b-5e958.k8s.godsmack.westeurope.azure.gigantic.io on 10.96.0.10:53: server misbehaving",
+			expectedMatch: true,
+		},
 	}
 
 	for _, tc := range testCases {
