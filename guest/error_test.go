@@ -71,6 +71,11 @@ func Test_IsGuestAPINotAvailable(t *testing.T) {
 			errorMessage:  "Get https://api.ci-wip-70f9b-5e958.k8s.godsmack.westeurope.azure.gigantic.io/api/v1/nodes?timeout=30s: dial tcp: lookup api.ci-wip-70f9b-5e958.k8s.godsmack.westeurope.azure.gigantic.io on 10.96.0.10:53: server misbehaving",
 			expectedMatch: true,
 		},
+		{
+			description:   "case 13: request canceled while waiting for connection",
+			errorMessage:  "Get https://api.ci-wip-2317d-c1c86.k8s.godsmack.westeurope.azure.gigantic.io/api/v1/nodes?timeout=30s: net/http: request canceled while waiting for connection (Client.Timeout exceeded while awaiting headers)",
+			expectedMatch: true,
+		},
 	}
 
 	for _, tc := range testCases {
