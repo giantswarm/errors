@@ -76,6 +76,11 @@ func Test_IsGuestAPINotAvailable(t *testing.T) {
 			errorMessage:  "Get https://api.ci-wip-2317d-c1c86.k8s.godsmack.westeurope.azure.gigantic.io/api/v1/nodes?timeout=30s: net/http: request canceled while waiting for connection (Client.Timeout exceeded while awaiting headers)",
 			expectedMatch: true,
 		},
+		{
+			description:   "case 14: certificate signed by unknown authority",
+			errorMessage:  "Get https://api.ci-cur-42bc2-cba40.k8s.godsmack.westeurope.azure.gigantic.io/api/v1/nodes?timeout=30s: x509: certificate signed by unknown authority (possibly because of \"crypto/rsa: verification error\" while trying to verify candidate authority certificate \"ci-cur-42bc2-cba40.k8s.godsmack.westeurope.azure.gigantic.io\")",
+			expectedMatch: true,
+		},
 	}
 
 	for _, tc := range testCases {
