@@ -62,7 +62,7 @@ func Test_IsGuestAPINotAvailable(t *testing.T) {
 			expectedMatch: true,
 		},
 		{
-			description:   "case 11: timeout establishing TLS handshake",
+			description:   "case 11: GET timeout establishing TLS handshake",
 			errorMessage:  "Get https://api.08vka.k8s.gorgoth.gridscale.kvm.gigantic.io/api/v1/nodes?timeout=30s: net/http: TLS handshake timeout",
 			expectedMatch: true,
 		},
@@ -84,6 +84,11 @@ func Test_IsGuestAPINotAvailable(t *testing.T) {
 		{
 			description:   "case 15: certificate signed by unknown authority",
 			errorMessage:  "Get https://api.ci-cur-42bc2-cba40.k8s.godsmack.westeurope.azure.gigantic.io/api/v1/nodes?timeout=30s: x509: certificate signed by unknown authority (possibly because of \"crypto/rsa: verification error\" while trying to verify candidate authority certificate \"ci-cur-42bc2-cba40.k8s.godsmack.westeurope.azure.gigantic.io\")",
+			expectedMatch: true,
+		},
+		{
+			description:   "case 16: Patch timeout establishing TLS handshake",
+			errorMessage:  "Patch https://api.xca65.k8s.geckon.gridscale.kvm.gigantic.io/api/v1/nodes/worker-sruw7-689bd75b49-8gbtl?timeout=30s: net/http: TLS handshake timeout",
 			expectedMatch: true,
 		},
 	}
