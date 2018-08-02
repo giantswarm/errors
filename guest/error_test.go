@@ -91,6 +91,11 @@ func Test_IsGuestAPINotAvailable(t *testing.T) {
 			errorMessage:  "Patch https://api.xca65.k8s.geckon.gridscale.kvm.gigantic.io/api/v1/nodes/worker-sruw7-689bd75b49-8gbtl?timeout=30s: net/http: TLS handshake timeout",
 			expectedMatch: true,
 		},
+		{
+			description:   "case 17: Get i/o timeout establishing TCP connection",
+			errorMessage:  "Get https://api.wgrt8.k8s.godsmack.westeurope.azure.gigantic.io/api/v1/nodes?timeout=30s: dial tcp 40.113.146.2:443: i/o timeout",
+			expectedMatch: true,
+		},
 	}
 
 	for _, tc := range testCases {
