@@ -111,6 +111,11 @@ func Test_IsAPINotAvailable(t *testing.T) {
 			errorMessage:  "Get https://api.72fru.k8s.godsmack.westeurope.azure.gigantic.io/api/v1/nodes: dial tcp: lookup api.72fru.k8s.godsmack.westeurope.azure.gigantic.io: no such host",
 			expectedMatch: true,
 		},
+		{
+			description:   "case 21: Get i/o timeout from awaiting header",
+			errorMessage:  "Get https://api.pz8mw.k8s.geckon.gridscale.kvm.gigantic.io/api?timeout=10s: context deadline exceeded (Client.Timeout exceeded while awaiting headers)",
+			expectedMatch: true,
+		},
 	}
 
 	for _, tc := range testCases {
