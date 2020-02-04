@@ -36,7 +36,7 @@ var (
 
 // APINotAvailableError is returned when the tenant Kubernetes API is not
 // available.
-var APINotAvailableError = &microerror.Error{
+var APINotAvailableError = microerror.Error{
 	Kind: "APINotAvailableError",
 }
 
