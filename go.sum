@@ -1,0 +1,4 @@
+github.com/giantswarm/microerror v0.1.1-0.20200204123133-8f12df8fee02 h1:ysrMgNgVhyPy0+wnAc/136jo1IDLZzWQeCz033vLTZk=
+github.com/giantswarm/microerror v0.1.1-0.20200204123133-8f12df8fee02/go.mod h1://Lo9dKJ8P2TBciuky5fDHEItccyvZOWE+B/0JiJT8A=
+github.com/google/go-cmp v0.3.1 h1:Xye71clBPdm5HgqGwUkwhbynsUJZhDbS20FvLhQ2izg=
+github.com/google/go-cmp v0.3.1/go.mod h1:8QqcDgzrUqlUb/G2PQTWiueGozuR1884gddMywk6iLU=
