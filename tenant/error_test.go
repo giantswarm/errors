@@ -121,6 +121,11 @@ func Test_IsAPINotAvailable(t *testing.T) {
 			errorMessage:  "Get https://api.jfc8o.k8s.gauss.eu-central-1.aws.gigantic.io/api?timeout=10s: EOF",
 			expectedMatch: true,
 		},
+		{
+			description:   "case 23: context deadline exceeded",
+			errorMessage:  "Get https://api.pnwd0.k8s.eu-central-1.aws.cps.vodafone.com/api?timeout=10s: context deadline exceeded",
+			expectedMatch: true,
+		},
 	}
 
 	for _, tc := range testCases {
