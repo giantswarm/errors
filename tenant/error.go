@@ -56,7 +56,7 @@ func IsAPINotAvailable(err error) bool {
 		}
 	}
 
-	if c == APINotAvailableError {
+	if c == APINotAvailableError { //nolint:gosimple
 		return true
 	}
 
