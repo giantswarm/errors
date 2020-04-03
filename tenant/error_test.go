@@ -126,6 +126,11 @@ func Test_IsAPINotAvailable(t *testing.T) {
 			errorMessage:  "Get https://api.pnwd0.k8s.eu-central-1.aws.cps.vodafone.com/api?timeout=10s: context deadline exceeded",
 			expectedMatch: true,
 		},
+		{
+			description:   "case 24: unable to connect to broken tenant api with expired certs and quptation marks",
+			errorMessage:  "Get \"https://api.9inbk.k8s.geckon.gridscale.kvm.gigantic.io/api?timeout=10s\": x509: certificate is valid for ingress.local, not api.9inbk.k8s.geckon.gridscale.kvm.gigantic.io",
+			expectedMatch: true,
+		},
 	}
 
 	for _, tc := range testCases {
