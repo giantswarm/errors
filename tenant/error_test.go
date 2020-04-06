@@ -127,8 +127,13 @@ func Test_IsAPINotAvailable(t *testing.T) {
 			expectedMatch: true,
 		},
 		{
-			description:   "case 24: tenant API unavailable",
+			description:   "case 24: tenant API unavailable certificate issues",
 			errorMessage:  "Get \"https://api.qh99j.k8s.gauss.eu-central-1.aws.gigantic.io/api?timeout=10s\": x509: certificate is valid for ingress.local, not api.qh99j.k8s.gauss.eu-central-1.aws.gigantic.io",
+			expectedMatch: true,
+		},
+		{
+			description:   "case 25: tenant API unavailable EOF",
+			errorMessage:  "Get \"https://api.hixh7.k8s.platypus.eu-west-1.aws.gigantic.io/api?timeout=10s\": EOF",
 			expectedMatch: true,
 		},
 	}
