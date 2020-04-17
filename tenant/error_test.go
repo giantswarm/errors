@@ -136,6 +136,16 @@ func Test_IsAPINotAvailable(t *testing.T) {
 			errorMessage:  "Get \"https://api.hixh7.k8s.platypus.eu-west-1.aws.gigantic.io/api?timeout=10s\": EOF",
 			expectedMatch: true,
 		},
+		{
+			description:   "case 26: tenant API unavailable certificate issues - don't match partial prefix",
+			errorMessage:  "t \"https://api.qh99j.k8s.gauss.eu-central-1.aws.gigantic.io/api?timeout=10s\": x509: certificate is valid for ingress.local, not api.qh99j.k8s.gauss.eu-central-1.aws.gigantic.io",
+			expectedMatch: false,
+		},
+		{
+			description:   "case 27: ingress not ready post different domain - don't match partial prefix",
+			errorMessage:  "t https://api.5xchu.aws.gigantic.io: x509: certificate is valid for localhost, not api.5xchu.aws.gigantic.io:",
+			expectedMatch: false,
+		},
 	}
 
 	for _, tc := range testCases {
