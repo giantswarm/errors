@@ -9,6 +9,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Add new error regex for internal API errors often returned when an API is not yet ready to handle requests.
+
 
 
 ## [0.2.3] 2020-04-17

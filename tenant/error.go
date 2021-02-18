@@ -31,6 +31,8 @@ var (
 		// A regular expression representing the kind of transient errors related to
 		// certificates returned while the tenant API is not fully up.
 		regexp.MustCompile(`Get|Patch|Post "?https://api\..*: x509: (certificate is valid for ingress.local, not api\..*|certificate has expired or is not yet valid.*|certificate signed by unknown authority \(possibly because of "crypto/rsa: verification error" while trying to verify candidate authority certificate.*?\))`),
+		// A regular expression representing arbitrary internal errors from a Kubernetes API server.
+		regexp.MustCompile(`an error on the server \(.*\) has prevented the request from succeeding`),
 	}
 )
 
