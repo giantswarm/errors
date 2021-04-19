@@ -9,7 +9,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-
+- Fix error matching for other error messages with URLs.
+- Add tests for quoted URL matching.
 
 ## [0.2.1] 2020-04-03
 
