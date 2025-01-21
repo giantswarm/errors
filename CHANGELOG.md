@@ -5,8 +5,6 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-
-
 ## [Unreleased]
 
 ## [0.3.1] - 2025-01-21
@@ -20,15 +18,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Add new error regex for internal API errors often returned when an API is not yet ready to handle requests.
 
-
-
 ## [0.2.3] 2020-04-17
 
 ### Fixed
 
 - Fix error message prefix matching in IsAPINotAvailable().
-
-
 
 ## [0.2.2] 2020-04-06
 
@@ -36,14 +30,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Fix all error matchings for changing error messages by considering optional quotes.
 
-
 ## [0.2.1] 2020-04-03
 
 ### Fixed
 
 - Fix error matching for changing error messages.
-
-
 
 ## [0.2.0] 2020-03-25
 
@@ -52,14 +43,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Switch from dep to go modules
 - Use architect-orb
 
-
-
 ## [0.1.0] 2020-03-19
 
 ### Added
 
 - First release.
-
 
 
 [Unreleased]: https://github.com/giantswarm/errors/compare/v0.3.1...HEAD
