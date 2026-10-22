@@ -276,6 +276,56 @@ func Test_IsAPINotAvailable(t *testing.T) {
 			errorMessage:  "Patch release: dial tcp 10.0.0.1:443: i/o timeout",
 			expectedMatch: false,
 		},
+		{
+			description:   "case 54: Get word followed by an unrelated namespaces EOF",
+			errorMessage:  "Get namespaces/foo/bar: EOF",
+			expectedMatch: false,
+		},
+		{
+			description:   "case 55: Get word followed by an unrelated api timeout",
+			errorMessage:  "Get api?timeout=10s: context deadline exceeded",
+			expectedMatch: false,
+		},
+		{
+			description:   "case 56: Patch word followed by an unrelated TLS handshake timeout",
+			errorMessage:  "Patch /api/v1/nodes: net/http: TLS handshake timeout",
+			expectedMatch: false,
+		},
+		{
+			description:   "case 57: Get word followed by an unrelated client timeout",
+			errorMessage:  "Get something (Client.Timeout exceeded while awaiting headers)",
+			expectedMatch: false,
+		},
+		{
+			description:   "case 58: Patch word followed by an unrelated x509 error",
+			errorMessage:  "Patch config: x509: certificate has expired or is not yet valid",
+			expectedMatch: false,
+		},
+		{
+			description:   "case 59: Post unquoted api URL dial i/o timeout",
+			errorMessage:  "Post https://api.5xchu.aws.gigantic.io/api/v1/nodes: dial tcp 10.0.0.1:443: i/o timeout",
+			expectedMatch: true,
+		},
+		{
+			description:   "case 60: Patch quoted api URL EOF on nodes",
+			errorMessage:  "Patch \"https://api.5xchu.aws.gigantic.io/api/v1/nodes/worker-1\": EOF",
+			expectedMatch: true,
+		},
+		{
+			description:   "case 61: Post quoted api URL DNS no such host",
+			errorMessage:  "Post \"https://api.5xchu.aws.gigantic.io/api/v1/nodes\": dial tcp: lookup api.5xchu.aws.gigantic.io: no such host",
+			expectedMatch: true,
+		},
+		{
+			description:   "case 62: Patch quoted api URL context deadline exceeded",
+			errorMessage:  "Patch \"https://api.5xchu.aws.gigantic.io/api?timeout=10s\": context deadline exceeded",
+			expectedMatch: true,
+		},
+		{
+			description:   "case 63: Post quoted api URL client timeout",
+			errorMessage:  "Post \"https://api.5xchu.aws.gigantic.io/api/v1/nodes\": net/http: request canceled (Client.Timeout exceeded while awaiting headers)",
+			expectedMatch: true,
+		},
 	}
 
 	for _, tc := range testCases {
