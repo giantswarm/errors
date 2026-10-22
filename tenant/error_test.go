@@ -251,6 +251,31 @@ func Test_IsAPINotAvailable(t *testing.T) {
 			errorMessage:  "Get \"https://api.qh99j.k8s.gauss.eu-central-1.aws.gigantic.io/api?timeout=10s\": x509: certificate is valid for ingress.local, not api.qh99j.k8s.gauss.eu-central-1.aws.gigantic.io",
 			expectedMatch: true,
 		},
+		{
+			description:   "case 49: bare Get word is not a tenant API error",
+			errorMessage:  "Get failed for unrelated reason",
+			expectedMatch: false,
+		},
+		{
+			description:   "case 50: bare Patch word is not a tenant API error",
+			errorMessage:  "Patch applied wrongly",
+			expectedMatch: false,
+		},
+		{
+			description:   "case 51: Post word followed by an unrelated EOF",
+			errorMessage:  "Post processing failed: unexpected EOF",
+			expectedMatch: false,
+		},
+		{
+			description:   "case 52: Get word followed by an unrelated EOF",
+			errorMessage:  "Get config from file: unexpected EOF",
+			expectedMatch: false,
+		},
+		{
+			description:   "case 53: Patch word followed by an unrelated i/o timeout",
+			errorMessage:  "Patch release: dial tcp 10.0.0.1:443: i/o timeout",
+			expectedMatch: false,
+		},
 	}
 
 	for _, tc := range testCases {

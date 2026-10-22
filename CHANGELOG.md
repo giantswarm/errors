@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+
+- Fix `tenant.IsAPINotAvailable` matching any error containing the word `Get` or `Patch`. The verb alternation in the API-not-available patterns is now grouped, so only requests to `https://api.…` match.
+
 ## [0.3.1] - 2025-01-21
 
 - Add tests for quoted URL matching.
