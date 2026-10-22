@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
-- Fix `tenant.IsAPINotAvailable` matching any error containing the word `Get` or `Patch`. The verb alternation in the API-not-available patterns is now grouped, so only requests to `https://api.…` match.
+- Fix `tenant.IsAPINotAvailable` matching any error whose text contains the word `Get` or `Patch`. The verb alternation in the API-not-available patterns is now grouped, so only requests to `https://api.…` match. Errors from other hosts (for example `Get "https://10.0.0.1:6443/...": EOF`) are no longer treated as API not available.
 
 ## [0.3.1] - 2025-01-21
 
